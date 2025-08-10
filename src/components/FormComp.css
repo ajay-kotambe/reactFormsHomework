@@ -1,0 +1,8 @@
+.form-div {
+  /* background-color: aqua; */
+  width: 650px;
+}
+.actual-form {
+  display: flex;
+  flex-direction: column;
+}
