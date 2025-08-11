@@ -1,8 +1,72 @@
+/* Form container */
 .form-div {
-  /* background-color: aqua; */
-  width: 650px;
-}
-.actual-form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+/* Actual form styling */
+.actual-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+/* Label styling */
+.actual-form label {
+  font-weight: 600;
+  font-size: 14px;
+
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+/* Input and select styling */
+.actual-form input[type="text"],
+.actual-form input[type="number"],
+.actual-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Checkbox and radio sections */
+#checkboxes input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+#checkboxes div {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 12px;
+  margin-left: 24px;
+}
+
+/* Push notifications section */
+.actual-form input[type="radio"] + label {
+  margin-right: 20px;
+}
+
+.actual-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 12px;
+  font-size: 14px;
+}
+
+.actual-form button:hover {
+  background-color: #1d4ed8;
 }
