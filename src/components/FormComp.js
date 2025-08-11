@@ -14,6 +14,7 @@ const FormComp = () => {
     wantComments: false,
     wantCandidates: false,
     wantOffers: false,
+    notifications: "",
   });
 
   // console.log(formData);
@@ -73,11 +74,12 @@ const FormComp = () => {
               onChange={changeHandler}
               id="country"
             >
+              <option value="">Choose Country</option>
               <option value="India">India</option>
               <option value="Russia">Russia</option>
               <option value="USA">USA</option>
               <option value="Austrlia">Austrlia</option>
-              <option value="Israel">Israel</option>
+              <option value="Israel">Israel</option> 
             </select>
           </div>
           <label htmlFor="street-address">Street Address</label>
@@ -116,6 +118,8 @@ const FormComp = () => {
             value={formData.postalCode}
             onChange={changeHandler}
           />
+          {/* can also feildset and legend */}
+
           <label>By Email</label>
           <div id="checkboxes">
             <input
