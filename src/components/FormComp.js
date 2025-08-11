@@ -11,6 +11,9 @@ const FormComp = () => {
     city: "",
     state: "",
     postalCode: "",
+    wantComments: false,
+    wantCandidates: false,
+    wantOffers: false,
   });
 
   // console.log(formData);
@@ -41,6 +44,7 @@ const FormComp = () => {
             name="firstName"
             placeholder="First Name.."
             id="firstName"
+            value={formData.firstName}
             onChange={changeHandler}
           />
           <label htmlFor="lastName">Last name</label>
@@ -49,6 +53,7 @@ const FormComp = () => {
             placeholder="Last Name.."
             id="lastName"
             name="lastName"
+            value={formData.lastName}
             onChange={changeHandler}
           />
           <label htmlFor="email">Email address</label>
@@ -57,11 +62,17 @@ const FormComp = () => {
             placeholder="example@duck.com"
             id="email"
             name="email"
+            value={formData.email}
             onChange={changeHandler}
           />
           <div>
             <label htmlFor="country">Country</label> <br />
-            <select name="country" onChange={changeHandler} id="country">
+            <select
+              name="country"
+              value={formData.country}
+              onChange={changeHandler}
+              id="country"
+            >
               <option value="India">India</option>
               <option value="Russia">Russia</option>
               <option value="USA">USA</option>
@@ -71,6 +82,7 @@ const FormComp = () => {
           </div>
           <label htmlFor="street-address">Street Address</label>
           <input
+            value={formData.streetAddress}
             type="text"
             placeholder="Street Address"
             name="streetAddress"
@@ -82,6 +94,7 @@ const FormComp = () => {
             type="text"
             placeholder="eg: Delhi"
             id="city"
+            value={formData.city}
             name="city"
             onChange={changeHandler}
           />
@@ -91,6 +104,7 @@ const FormComp = () => {
             placeholder="West Bengal"
             id="state-province"
             name="state"
+            value={formData.state}
             onChange={changeHandler}
           />
           <label htmlFor="postalCode">ZIP/ Postal code</label>
@@ -99,13 +113,15 @@ const FormComp = () => {
             placeholder="413146"
             id="postalCode"
             name="postalCode"
+            value={formData.postalCode}
             onChange={changeHandler}
           />
           <label>By Email</label>
           <div id="checkboxes">
             <input
               type="checkbox"
-              name="comments"
+              name="wantComments"
+              checked={formData.wantComments}
               id="comments"
               onChange={changeHandler}
             />
@@ -113,7 +129,8 @@ const FormComp = () => {
             <div>Get notified when someons posts a comment on a posting.</div>
             <input
               type="checkbox"
-              name="candidiates"
+              name="wantCandidates"
+              checked={formData.wantCandidates}
               id="candidates"
               onChange={changeHandler}
             />
@@ -121,7 +138,8 @@ const FormComp = () => {
             <div>Get notified when a candidate applies for job.</div>
             <input
               type="checkbox"
-              name="offers"
+              name="wantOffers"
+              checked={formData.wantOffers}
               id="offers"
               onChange={changeHandler}
             />
@@ -137,6 +155,7 @@ const FormComp = () => {
               name="notifications"
               id="everything"
               value="Everything"
+              checked={formData.notifications === "Everything"}
               onChange={changeHandler}
             />
             <label htmlFor="everything">Everything</label>
@@ -146,6 +165,7 @@ const FormComp = () => {
               id="same-as-email"
               value="Same as email"
               onChange={changeHandler}
+              checked={formData.notifications === "Same as email"}
             />
             <label htmlFor="same-as-email">Same as email</label>
             <input
@@ -154,6 +174,7 @@ const FormComp = () => {
               id="no-push-notifications"
               value="No push notifications"
               onChange={changeHandler}
+              checked={formData.notifications === "No push notifications"}
             />
             <label htmlFor="no-push-notifications">No push notifications</label>
           </div>
